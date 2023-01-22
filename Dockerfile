@@ -1,5 +1,7 @@
-FROM python:3.9 
+FROM python:3.9
+
+ADD main-3.py /
+
 RUN pip install flask
-ADD main-2.py .
-CMD python ./main-2.py 
-# Or enter the name of your unique directory and parameter set.
+
+CMD [ "python", "./main-3.py" ]

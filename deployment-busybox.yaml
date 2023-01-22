@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busy-deployment
+  labels:
+    jjj: kkk
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: busy-test
+  template:
+    metadata:
+      labels:
+        app: busy-test
+        kk: assa
+    spec:
+      containers:
+      - name: python-test
+        image: busybox:latest
+        command: ["/bin/sh"]
+        # args: ["sleep", "10000"]
+        ports:
+        - containerPort: 80

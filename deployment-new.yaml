@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: poc-deployment
+  labels:
+    jjj: kkk
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python-test
+  template:
+    metadata:
+      labels:
+        app: python-test
+        kk: assa
+    spec:
+      containers:
+      - name: python-test
+        image: shmuelsch/testpythonori:2
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        ports:
+        - containerPort: 80
