@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-deployment
+  labels:
+    tuvia: haholev
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: adi
+  template:
+    metadata:
+      labels:
+        app: adi
+    spec:
+      containers:
+      - name: hi-guys
+        image: shmuelsch/testpythonori:2
+        ports:
+        - containerPort: 80
+        env:
+          - name: PYTHONUNBUFFERED
+            value: "1"
+              
