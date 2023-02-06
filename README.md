@@ -1,37 +1,33 @@
 
-# Summary of the execrise 📝  
- 
+# Security 📝  
 
-## Instructions 🚀   
-1. Write a simple program printing hello world in python
-2. Run it and make sure it works
-3. Write docker file for it
-4. Build the image and run it locally
-5. Write deployment file
-6. Scale
-7. Check the logs of the pod
-8. Scale to number of replicas 
-9. Change the image to nginx
-10. Use kubectl port-foward to check that nginx is up
-11. Write a nodeport service
-12. Find the ip of the node
-13. Use the ip to access the nginx
+## Topics 🚀  
 
-## Useful commands 🔥  
-```
-docker Build
-docker run 
-k get pod/svc
-k explain deployment.spec
-k apply -f depl.yaml
-k delete po
-k describe po
-k logs <pod name>
-k scale deploy
---dry-run
-k port-foward 
-k exec <pod name> -it -- bash
-k get nodes -o wide
-```    
-## Links ✨  
-https://kubernetes.courselabs.co/
+1. Authentication Vs Authorization
+2. KubeApi server
+3. RBAC
+4. Symmetric encryption
+5. ASymmetric encryption (Lock Vs Key)
+6. SSH & private keys
+7. Autherized keys
+8. https:
+    1. Server Generates private & public keys
+    2. First handshake -> The user send its Symmetric key encrypted by the user private key
+9. Certificate = Public Key
+10. Who the Certificateis issued to
+11. CA (==Kosher) & CSR
+12. Root CA
+13. Who Autherized the CA it self? public key of the CA in the browser
+14. Client Certificates
+15. Naming convention
+16. Kubeley, etcd
+17. Expiry Date, issued to, rotating    
+18. KubeConfig default location
+19. Certifcates in kubeconfig
+## Commands 🔥  
+1. openssl x509 -in */.crt -text -noout
+2. kubectl config view  (Specifiy config file) 
+3.  
+## Save Readme ✨  
+Once you're done, click on the save button to directly save your Readme to your
+project's root directory!
