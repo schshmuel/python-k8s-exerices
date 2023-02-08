@@ -19,15 +19,21 @@
 12. Root CA
 13. Who Autherized the CA it self? public key of the CA in the browser
 14. Client Certificates
-15. Naming convention
-16. Kubeley, etcd
+15. Naming convention crt/keys
+16. Kubelet, etcd
 17. Expiry Date, issued to, rotating    
 18. KubeConfig default location
 19. Certifcates in kubeconfig
 ## Commands 🔥  
 1. openssl x509 -in */.crt -text -noout
 2. kubectl config view  (Specifiy config file) 
-3.  
+3. ETCDCTL_API=3 etcdctl snapshot save snapshot.db --endpoints=https://127.0.0.1:2379 \
+ --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key    
+To Restore:
+- Stop kube-api server 
+- ETCDCTL_API=3 etcdctl snapshot restore snapshot.db   --data-dir /var/lib/etcd-from-backup (new data)
+- Configure the etcd to use the new dir
+4. etcdctl member list
 ## Save Readme ✨  
 Once you're done, click on the save button to directly save your Readme to your
 project's root directory!
